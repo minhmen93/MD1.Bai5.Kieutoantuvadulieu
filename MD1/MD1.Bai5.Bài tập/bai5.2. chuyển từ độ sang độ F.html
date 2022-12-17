@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="chuyenDoi()">Chuyển đổi</button>
+<script>
+    function chuyenDoi() {
+        let C;
+        let F;
+        C = prompt(" Enter the C ");
+        F = prompt(" Enter the F ");
+        parseInt(C);
+        parseInt(F);
+        C = (F - 32) / 1.8;
+        alert(" Độ C = " + C);
+        F = (C * 1.8) + 32;
+        alert(" Độ F = " + F);
+    }
+
+
+</script>
+</body>
+</html>

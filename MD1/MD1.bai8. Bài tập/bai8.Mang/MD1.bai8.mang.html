@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="The Name Student..." id="name">
+<button type="button" onclick="Create()">Create</button>
+<input type="text" id="search" placeholder="SearchStudent">
+<button type="button" onclick="Search()">Search</button>
+<table id="list" border="1" style="text-align: center;min-width: 600px">
+</table>
+<script>
+    let arr = [];
+
+    function show() {
+        let data = "<th>stt</th><th>name</th><th>edit</th><th>delete</th>";
+        for (let i = 0; i < arr.length; i++) {
+            data += `<tr>
+<td>${i + 1}</td>
+<td>${arr[i]}</td>
+<td><button id="${i}" onclick="Edit(this.id)" type="button" style="background: blue">Edit</button></td>
+<td><button type="button" id="${i}" class="delete" onclick="Delete(this.name)" style="background: red">Delete</button></td>
+</tr>`
+        }
+        document.getElementById("list").innerHTML = data
+
+    }
+
+    function Create() {
+        let name = document.getElementById('name').value;
+        arr.push(name)
+        document.getElementById("name").value = "";
+        show();
+    }
+
+    function Delete(id) {
+        arr.splice(id, 1)
+        show()
+
+    }
+
+    function Search() {
+        let search = document.getElementById("search").value;
+        let data = "<th>stt</th><th>name</th><th>edit</th><th>delete</th>";
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].includes(search)) {
+                data += `<tr>
+<td>${i + 1}</td>
+<td>${arr[i]}</td>
+<td><button type="button" style="background: blue">Edit</button></td>
+<td><button type="button" id="${i}" class="delete" onclick="Delete(this.name)" style="background: red">Delete</button></td>
+</tr>`
+            }
+        }
+        document.getElementById("list").innerHTML = data
+        document.getElementById("search").value = "";
+    }
+
+    function Edit(id) {
+        let newName = prompt("Nhập tên mới");
+        arr[id] = newName;
+        show();
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lớn nhất trong 3 số</title>
+</head>
+<body>
+<h1> Tim so lon nhat trong 3 so </h1>
+<input id="a" type="number" > nhap a <br>
+<input id="b" type="number"> nhap b <br>
+<input id="c" type="number"> nhap c <br>
+<button onclick=""> So lon nhat </button> <br>
+<p id="kq"></p>
+<script>
+    function soLonNhat(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+      console.log('giatri ====>a', a);
+      console.log('b ====> b', b );
+      console.log('c ====> c',c );
+      if (a>b) {
+      if(a>c) {
+          document.getElementById('kq').innerHTML = " So lon nhat la : " + a;
+      }else {
+       document.getElementById('kq').innerHTML = " So lon nhat la : " + c;
+      }
+          } else {
+              if(b>c){
+                  document.getElementById('kq').innerHTML= " So lon nhat la : " +b;
+              } else {
+                  document.getElementById('kq').innerHTML= " So lon nhat la : " +c;
+          }
+
+      }
+    }
+
+
+</script>
+
+
+
+</body>
+</html>

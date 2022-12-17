@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" onclick="diemCacMon()"> Điểm Các Môn</button>
+    <script>
+
+        function diemCacMon() {
+            let vatly;
+            let hoahoc;
+            let sinhhoc;
+            vatly = prompt(" Nhập điểm môn Vật Lý ");
+            parseInt(vatly);
+            hoahoc = prompt(" Nhập điểm môn Hóa Học ");
+            parseInt(hoahoc);
+            sinhhoc = prompt(" Nhập điểm môn Sinh Học ");
+            parseInt(sinhhoc);
+             tongdiem = ( vatly + hoahoc + sinhhoc);
+            alert(" Tổng điểm của 3 môn là " + tongdiem);
+
+             diemtrungbinh = tongdiem / 3;
+            alert(" Điểm trung bình là " + diemtrungbinh);
+
+        }
+    </script>
+</body>
+</html>
